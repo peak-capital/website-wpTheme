@@ -1,0 +1,365 @@
+// Setup for the logo Animation
+body.home #page {
+  overflow: hidden;
+  position: relative;
+}
+body.home #page, 
+body.home #masthead {
+  visibility: hidden;
+  opacity: 0;
+}
+body.home .main-navigation {
+  @include for-tablet-portrait-up {
+    display: none;
+  }
+}
+
+body.home .site-footer{
+  display: none;
+}
+body.home .main-navigation {
+  position: absolute;
+  right: 1rem;
+}
+body.home .peak-branding {
+  transform-origin: 0 0;
+  transform: scale(1);
+  transition: all .3s ease-in-out;
+}
+body.home .peak-branding circle,
+body.home .peak-branding path,
+body.home .peak-branding polygon {
+  transition: all .3s ease-in-out;
+}
+body.home.currentSegment_home-copy-segment-our-team,
+body.home.currentSegment_home-copy-segment-our-founders,
+body.home.currentSegment_home-copy-segment-our-focus,
+body.home.currentSegment_home-copy-segment-contact,
+body.home.currentSegment_home-copy-segment-content,
+body.home.currentSegment_home-copy-segment-staytuned {
+  & .peak-branding {
+    @include for-tablet-landscape-up {
+      transform: none;
+    }
+  }
+  & .peak-branding .peak-logo-svg-circle {
+    fill: #FFFFFF;
+    @include for-tablet-landscape-up {
+      fill: #000000;
+    }
+  }
+  & .peak-branding .peak-logo-svg-letters {
+    fill: #000000;
+    @include for-tablet-landscape-up {
+      fill: #FFFFFF;
+    }
+  }
+  & .ui-hamburger line {
+    stroke: #FFFFFF!important;
+    @include for-tablet-landscape-up {
+      stroke: #000000!important;
+    }
+  }
+}
+.home-copy-segment-next {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 5;
+  left: calc(50% - 30px);
+  bottom: 1rem;
+  background: #000;
+  border-radius: 50%;
+  padding: .5rem;
+  cursor: pointer;
+  & path {
+    stroke: $color-bg;
+  }
+}
+.home-copy-segment.home-image .home-copy-segment-next {
+  background-color: $color-bg;
+  @include for-tablet-landscape-up {
+    display: none;
+  }
+  & path {
+    stroke: $color-font;
+  }
+}
+
+.home-segment-nav {
+  display: none;
+  // ------
+  // In case we ever want the segment nav in tablet view, simply
+  // replace the landscape-up viewport below with these commented lines:
+  // ------
+  // @include for-tablet-portrait-up {
+  //   display: flex;
+  //   flex-direction: column;
+  //   position: absolute;
+  //   right: 0;
+  //   top: 50%;
+  //   transform: translate(-1em, -50%);
+  //   z-index: 1000;
+  // }
+  // @include for-tablet-landscape-up {
+  //   right: 50%;
+  // }
+  // ------
+  @include for-tablet-landscape-up {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-1em, -50%);
+    z-index: 1000;
+  }
+}
+.home-segment-nav-link {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  text-indent: -100px;
+  margin: 8px 0;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 50%;
+    transform: translate(-50%, -50%) scale(.5);
+    transition: transform .1s ease-in-out;
+    background-color: $color-font;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    // @include for-tablet-portrait-up {
+    //   background-color: $color-bg;
+    // }
+  }
+  &:hover:after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.home-segment-nav-link.active:after {
+  transform: translate(-50%, -50%) scale(1);
+}
+.home-segment-nav-link:first-child:hover::after,
+.home-segment-nav-link:first-child.active::after {
+  background-color: $color-blue;
+}
+.home-segment-nav-link:nth-child(2):hover::after,
+.home-segment-nav-link:nth-child(2).active::after {
+  background-color: $color-pink;
+}
+.home-segment-nav-link:nth-child(3):hover::after,
+.home-segment-nav-link:nth-child(3).active::after{
+  background-color: $color-green;
+}
+.home-segment-nav-link:nth-child(4):hover::after,
+.home-segment-nav-link:nth-child(4).active::after{
+  background-color: $color-yellow;
+}
+.home-segment-nav-link:nth-child(5):hover::after,
+.home-segment-nav-link:nth-child(5).active::after{
+  background-color: $color-red;
+}
+.home-copy {
+  scroll-behavior: smooth;
+  --webkit-scroll-behavior: smooth;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow-y: scroll;
+  position: relative;
+  scroll-snap-type: y mandatory;
+  @include for-tablet-landscape-up {
+  }
+}
+.home-copy-segment {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+  --webkit-scroll-behavior: smooth;
+  background-color: $color-font;
+  color: $color-bg;
+  position: relative;
+  @include for-tablet-landscape-up {
+    padding-top: 4rem;
+    padding-bottom: 10vh;
+    margin-left: 50%;
+  }
+}
+#home-copy-segment-our-founders {
+  justify-content: flex-start;
+  padding-top: 6rem;
+  @include for-tablet-portrait-up {
+    padding-top: 11rem;
+  }
+  @include for-tablet-landscape-up {
+    padding-top: 3rem;
+  }
+}
+// .home-copy-segment > * {
+//   // position: relative;
+//   // z-index: 1;
+// }
+.home-copy-segment small {
+  display: block;
+  text-align: center;
+}
+.home-copy-segment-title {
+  font-size: 1.5rem;
+  margin: 0 1em .5em 1em;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: 0.015em;
+  @include for-tablet-portrait-up {
+    font-size: 6vw;
+  }
+  @include for-tablet-landscape-up {
+    font-size: 3.25vw;
+  }
+}
+.home-copy-segment .wp-block-buttons{
+  margin-top: 3em;
+  z-index: 2;
+  text-align: center!important;
+}
+.home-copy-segment > canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  // width: 100%;
+  // height: 100%;
+  z-index: 1;
+}
+#home-copy-segment-contact .wp-block-button__link ,
+#home-copy-segment-content .wp-block-button__link ,
+#home-copy-segment-our-focus .wp-block-button__link ,
+#home-copy-segment-our-founders .wp-block-button__link ,
+#home-copy-segment-our-team .wp-block-button__link {
+  color: $color-font;
+  transition: .3s all ease-in-out;
+}
+#home-copy-segment-contact .wp-block-button__link:hover ,
+#home-copy-segment-content .wp-block-button__link:hover ,
+#home-copy-segment-our-focus .wp-block-button__link:hover ,
+#home-copy-segment-our-founders .wp-block-button__link:hover ,
+#home-copy-segment-our-team .wp-block-button__link:hover {
+  background-color: $color-bg;
+  color: $color-font;
+}
+// #home-copy-segment-our-team .wp-block-button__link:hover,
+#home-copy-segment-our-team .wp-block-button__link {
+  background-color: $color-pink;
+}
+// #home-copy-segment-our-founders .wp-block-button__link:hover,
+#home-copy-segment-our-founders .wp-block-button__link {
+  background-color: $color-blue;
+  color: $color-bg;
+}
+// #home-copy-segment-our-focus .wp-block-button__link:hover,
+#home-copy-segment-our-focus .wp-block-button__link {
+  background-color: $color-green;
+}
+// #home-copy-segment-contact .wp-block-button__link:hover,
+#home-copy-segment-contact .wp-block-button__link {
+  background-color: $color-yellow;
+}
+// #home-copy-segment-content .wp-block-button__link:hover,
+#home-copy-segment-content .wp-block-button__link {
+  background-color: $color-red;
+}
+.home-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  padding: 1em;
+  margin-left: 0;
+  z-index: 2;
+  background-color: $color-bg;
+  color: $color-font;
+  @include for-tablet-landscape-up {
+    min-height: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%; 
+  }
+}
+.home-image .post-thumbnail {
+  width: 80vw;
+  height: 80vw;
+  margin: 0 auto 1.5rem auto;
+  overflow: hidden;
+  border-radius: 50%;
+  @include for-tablet-landscape-up {
+    width: 41vw;
+    height: 41vw;
+  }
+}
+.home-image .post-thumbnail img,
+.home-image .post-thumbnail picture {
+  margin: auto;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  transform-origin: 50% 50%;
+  transition: transform 3s ease-in-out;
+  &:hover {
+    transform: scale(1.1) rotate(-2deg);
+  }
+}
+.home-image-contact-details {
+  text-align: center;
+  font-size: 4.8vw;
+  font-weight: bold;
+  @include for-tablet-portrait-up {
+    font-size: 3.5vw;
+  }
+  @include for-tablet-landscape-up {
+    font-size: 21px;
+  }
+}
+#home-copy-segment-staytuned {
+  padding-bottom: 0;
+}
+#home-copy-segment-staytuned p {
+  text-align: center;
+  font-size: 5vw;
+  letter-spacing: 0.015em;
+  font-weight: 600;
+  margin: 0 auto 1em auto;
+  max-width: calc(100% - 4em);
+  line-height: 1;
+  @include for-tablet-landscape-up {
+    font-size: 2.25vw;
+  }
+}
+.home-copy-segment a {
+  //color: $color-bg;
+  text-decoration: none;
+}
+// Logo intro animation
+.logo-clone {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  pointer-events: none;
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+.wp-block-button__link,
+.wp-block-button__link:visited {
+  text-decoration: none;
+  border-radius: 35px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: .5em 2em;
+  min-width: 300px;
+  background-color: $color-pink;
+  color: $color-font;
+}

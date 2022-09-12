@@ -1,0 +1,116 @@
+.wp-block-columns.peak-4t-columns {
+  @include for-tablet-portrait-up {
+    padding: 0 .5rem;
+    margin: 0 auto;
+    width: 84%;
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap:0;
+  }
+}
+.wp-block-columns.peak-4t-columns .peak-4t-t1 {
+  grid-column: 1 / span 4;
+  grid-row: 1 / span 5;
+} 
+.wp-block-columns.peak-4t-columns .peak-4t-t2 {
+  grid-column: 5 / span 3;
+  grid-row: 1 / span 3;
+}
+.wp-block-columns.peak-4t-columns .peak-4t-t3 {
+  grid-column: 8 / span 3;
+  grid-row: 1 / span 3;
+}
+.wp-block-columns.peak-4t-columns .peak-4t-t4 {
+  grid-column: 5 / span 6;
+  grid-row: 4 / span 2;
+}
+.wp-block-columns.peak-4t-columns .peak-4t-t1, 
+.wp-block-columns.peak-4t-columns .peak-4t-t2, 
+.wp-block-columns.peak-4t-columns .peak-4t-t3, 
+.wp-block-columns.peak-4t-columns .peak-4t-t4 {
+  background-color: $color-bg;
+  border: 2px solid $color-font;
+  padding: 1rem;
+  margin: 0 .5rem 1rem .5rem;
+  position: relative;
+  transition: all .3s ease-in-out;
+  &:hover {
+    background-color: $color-yellow;
+  }
+  &:before {
+    content: '01';
+    background-color: $color-yellow;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 50%;
+    font-size: .9rem;
+    line-height: 3rem;
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    width: 3rem;
+    height: 3rem;
+    @include for-tablet-portrait-up {
+      top: -1rem;
+      right: -1rem;
+    }
+    @include for-tablet-landscape-up {
+      top: .5rem;
+      right: .5rem;
+    }
+  }
+}
+.wp-block-columns.peak-4t-columns .peak-4t-t2 {
+  &:hover {
+    background-color: $color-pink;
+  }
+  &:before {
+    background-color: $color-pink;
+    content: '02';
+  }
+}
+.wp-block-columns.peak-4t-columns .peak-4t-t3 {
+  &:hover {
+    background-color: $color-cyan;
+  }
+  &:before {
+    background-color: $color-cyan;
+    content: '03';
+  }
+}
+.wp-block-columns.peak-4t-columns .peak-4t-t4 {
+  @include for-tablet-landscape-up {
+    columns: 2; 
+  }
+  &:hover {
+    background-color: $color-green;
+  }
+  &:before {
+    background-color: $color-green;
+    content: '04';
+  }
+  & h2 {
+    column-span: all;
+  }
+}
+.wp-block-columns.peak-4t-columns h2 {
+  @include for-tablet-portrait-up {
+    font-size: 1.5rem;
+  }
+}
+.wp-block-columns.peak-4t-columns p {
+  line-height: 1.05;
+}
+.wp-block-columns.peak-4t-columns .wp-block-column *:first-child{
+  margin-top: 0;
+}
+.wp-block-columns.peak-4t-columns .has-small-font-size {
+  font-size: .7rem;
+  margin-bottom: 0.5rem;
+}
+.wp-block-columns.peak-4t-columns .has-medium-font-size {
+  font-size: 1.2rem;
+}
+.wp-block-columns.peak-4t-columns .has-small-font-size + .has-medium-font-size {
+ margin-bottom: 2.5rem;
+}

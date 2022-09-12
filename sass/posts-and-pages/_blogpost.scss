@@ -1,0 +1,131 @@
+body.single-post {
+  background-color: $color-font;
+  color: $color-bg;
+  padding-top: 4rem;
+  @include for-tablet-portrait-up {
+    padding-top: 7rem;
+  }
+  @include for-tablet-landscape-up {
+    padding-top: 9rem;
+  }
+  & .peak-logo-svg-letters {
+    fill: $color-font;
+  }
+  & .peak-logo-svg circle {
+    fill:$color-bg;
+  }
+  & .ui-hamburger line {
+    stroke: $color-bg;
+  }
+  & .main-navigation a {
+    color: $color-bg;
+  }
+  & #site-navigation {
+    @include for-tablet-portrait-up {
+      background-color: #000;
+    }
+  }
+  & .post-hero {
+    margin: 0 auto 3rem auto;
+    width: calc(100% - 2rem);
+    max-width: 36rem;
+    height: 55vw;
+    @media (min-width: 38rem) {
+      height: 20rem;
+    }
+    & img, & picture {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  & article {
+    max-width: 38rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  & .entry-title {
+    text-align: center;
+    line-height: 1.1;
+  }
+  & .entry-footer {
+    display: none;
+  }
+  & .entry-meta {
+    text-align: center;
+    line-height: 1;
+    margin: 3rem auto;
+  }
+  & .posted-on {
+    font-size: .7rem;
+    display: block;
+    & a {
+      pointer-events: none;
+      text-decoration: none;
+    }
+  }
+  & .byline {
+    font-size: 1.2rem;
+    display: block;
+    & a {
+      pointer-events: none;
+      text-decoration: none;
+    }
+  }
+}
+.single-post-next-link {
+  text-align: right;
+  padding: 1rem;
+  @media ( min-width: 38rem ) {
+    max-width: 38rem;
+    margin: 1rem auto 0 auto;
+  }
+  @include for-tablet-landscape-up {
+    position: absolute;
+    left: calc( (100% - 36rem) / 2 + 36rem);
+    text-align: left;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  & a, a:visited {
+    display: block;
+    font-weight: 700;
+    text-decoration: none;
+    @include for-tablet-landscape-up {
+      font-size: .9rem;
+    }
+  }
+  & .ui-arrow-right {
+    display: inline-block;
+    & path {
+      stroke: $color-bg;
+    }
+  }
+}
+body.single-post.darkmode-off {
+  background-color: $color-bg;
+  color: $color-font;
+  & .peak-logo-svg-letters {
+    fill: $color-bg;
+  }
+  & .peak-logo-svg circle {
+    fill:$color-font;
+  }
+  & .ui-hamburger line {
+    stroke: $color-font;
+  }
+  & .main-navigation a {
+    color: $color-bg;
+    @include for-tablet-portrait-up {
+      color: $color-font;
+    }
+  }
+  & #site-navigation {
+    @include for-tablet-portrait-up {
+      background-color: $color-bg;
+    }
+  }
+  & .single-post-next-link .ui-arrow-right path {
+    stroke: $color-font;
+  }
+}

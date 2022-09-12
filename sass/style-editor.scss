@@ -1,0 +1,299 @@
+@font-face {
+  font-family: "Lazzer";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/Lazzer-SemiBold.woff2") format("woff2"),
+       url("./fonts/Lazzer-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Lazzer";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/Lazzer-Bold.woff2") format("woff2"),
+       url("./fonts/Lazzer-Bold.woff") format("woff");
+}
+
+@mixin blocklabel($blocklabelname) {
+  content: $blocklabelname;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  color: #FFF;
+  padding: 2px 5px;
+  border-radius: 0 0 3px 0;
+  z-index: 4;
+}
+
+@mixin parentblocklabel($parentblocklabelname) {
+  content: $parentblocklabelname;
+  font-size: 12px;
+  line-height: 1;
+  position: absolute;
+  top: -18px;
+  right: 0;
+  background-color: #000;
+  color: #FFF;
+  padding: 3px 5px;
+  border-radius: 3px 3px 0 0;
+  z-index: 4;
+  font-weight: 700;
+}
+
+//Global 
+
+@import "variables";
+@import "base";
+.is-root-container {
+  border: 4px solid #EEE;
+}
+.wp-block-group {
+  border: 1px solid #000;
+  width: calc(100% - 10px);
+}
+
+
+//Components
+@import "components/buttons";
+@import "components/cards";
+@import "components/typeform-embed";
+.peak-typeform-container::before {
+  @include parentblocklabel('Typeform Embed');
+}
+.peak-typeform-container .typeform-editor{
+  background-color: $color-bg;
+  color: $color-font;
+  padding: 1rem;
+}
+
+@import "components/four-ts";
+.peak-4t-columns .peak-4t-t1,
+.peak-4t-columns .peak-4t-t2,
+.peak-4t-columns .peak-4t-t3,
+.peak-4t-columns .peak-4t-t4
+{
+  font-size: .8em;
+  margin: 0 .5rem 0 0 !important;
+}
+
+.peak-4t-block {
+  border: 1px solid #000;
+  &::before {
+    @include parentblocklabel('Peak 4T Block');
+  }
+}
+
+// In Residence
+
+.peak-residence-block {
+  background-color: $color-font;
+  padding: 3rem 0;
+  color: $color-bg;
+}
+.peak-residence-block .wp-block-group__inner-container .peak-headline:first-child {
+  margin-top: 0;
+}
+.peak-residence-items > .wp-block-group__inner-container {
+  display: flex;
+  justify-content: flex-start;
+  //gap: 1rem;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  @include for-tablet-landscape-up{
+    justify-content: center;
+    
+  }
+}
+.peak-residence-item {
+  padding: 1rem;
+  flex-basis: 75%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  @include for-tablet-landscape-up {
+    flex-basis: 20%;
+  }
+}
+.peak-residence-item-image {
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0;
+}
+.peak-residence-item-image figcaption {
+  display: none;
+}
+.peak-residence-item-image img,
+.peak-residence-item-image picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// ---------------------
+// FAQ
+// ---------------------
+.peak-faq-block {
+  border: 1px solid #000;
+  &::before {
+    @include parentblocklabel('Peak FAQs (hidden)');
+  }
+}
+.peak-faq {
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  margin: 2px 4px;
+  padding: 5px;
+  &::before {
+    @include blocklabel('FAQ Question');
+  }
+}
+
+// ---------------------
+// In the News
+// ---------------------
+@import "components/in-the-news";
+.peak-in-the-news-block::before {
+  @include parentblocklabel('Peak in the News');
+}
+.peak-in-the-news-item::before {
+  @include parentblocklabel('Newsarticle');
+}
+.peak-in-the-news-item-coin figcaption {
+  display: none;
+}
+.peak-in-the-news-item-coin {
+  right: 0;
+}
+.peak-in-the-news-item-coin img,
+.peak-in-the-news-item-coin picture {
+  position: relative;
+}
+
+// ---------------------
+// Events
+// ---------------------
+.peak-event {
+  width: calc(100% - 2rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.peak-event::before {
+  @include blocklabel('Event');
+}
+.peak-event > .wp-block-group__inner-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid $color-font;
+}
+.peak-event-date {
+  flex-basis: 25%;
+}
+.peak-event-name {
+  flex-basis: 50%;
+}
+.peak-event-country {
+  flex-basis: 25%;
+  text-align: right;
+}
+
+.wp-block-quote.teammember-full-content-quote {
+  border-left: none;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+.slider {
+  background-color: #EEE;
+  border-radius: 3px;
+  padding: 1rem;
+  &::before {
+    @include parentblocklabel('Testimonial Slider');
+  }
+}
+.slider h2, 
+.slider h3 {
+  font-size: 20px;
+}
+.slider .slide {
+  border: 2px solid #000;
+  background-color: #FFF;
+  border-radius: 5px;
+  padding: 1rem;
+  position: relative;
+  &::before{
+    @include blocklabel('Slide');
+  }
+}
+
+.founder-photograph,
+.founder-coin {
+  width: 250px;
+  height: 250px;
+  float: left;
+  margin-right: 1rem;
+  & > div:first-child {    
+    height: 250px!important;
+  }
+  & img, & svg, & picture {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  & figcaption {
+    display: none;
+  }
+}
+.founder-photograph:before{
+  @include blocklabel('Founder Photo');
+}
+.founder-coin:before{
+  @include blocklabel('Founder Coin');
+}
+.founder-photograph + div {
+  clear: both;
+}
+.card-full-content-coin figcaption{
+  display: none;
+}
+.card-full-content-links p {
+  margin: 0;
+}
+
+.peak-page-header-heroimg {
+  margin-top: 0;
+}
+.peak-page-header-heroimg figcaption {
+  display: none;
+}
+.peak-page-header-heroimg:before {
+  @include blocklabel('Peak Hero Image');
+}
+.wp-block.peak-page-head,
+.wp-block.peak-page-header-heroimg {
+  max-width: 100%;
+  margin-top: 0;
+}
+.post-hero img,
+.post-hero picture,
+.peak-page-header-heroimg img,
+.peak-page-header-heroimg picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  display: block;
+}
+.peak-headline:before {
+  @include blocklabel("Peak Headline");
+}
+.peak-page-head {
+  border: 1px solid #000;
+  &:before {
+    @include parentblocklabel("Peak Page Header")
+  }
+}

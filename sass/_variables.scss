@@ -1,0 +1,54 @@
+$color-font: #000000;
+$color-bg: #FFFFFF;
+body .has-brand-white-background-color{
+  background-color: $color-bg;
+}
+$color-pink: #FF00FF;
+body .has-brand-pink-background-color {
+  background-color: $color-pink;
+}
+$color-green: #31FF3F;
+body .has-brand-green-background-color {
+  background-color: $color-green;
+}
+$color-cyan: #00FFFF;
+body .has-brand-cyan-background-color {
+  background-color: $color-cyan;
+}
+$color-blue: #000EDC;
+body .has-brand-blue-background-color {
+  background-color: $color-blue;
+  color: $color-bg;
+}
+$color-yellow: #FFC600;
+body .has-brand-yellow-background-color,
+body .has-brand-yellow-background-color:visited {
+  background-color: $color-yellow;
+}
+$color-red: #F91C0E;
+body .has-brand-red-background-color {
+  background-color: $color-red;
+}
+:root {
+  --color-font: $color-font;
+  --color-bg: $color-bg;
+}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-bigger-desktop-up {
+  @media (min-width: 1281px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}

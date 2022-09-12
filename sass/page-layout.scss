@@ -1,0 +1,35 @@
+// #page {
+//   // overflow: auto;
+//   //why did this matter once?
+// }
+.peak-page-header-heroimg {
+  margin-top: 0;
+  height: 71vw;
+  @include for-tablet-landscape-up {
+    height: 38vw;
+  }
+}
+.post-hero img,
+.post-hero picture,
+.peak-page-header-heroimg img,
+.peak-page-header-heroimg picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.peak-headline {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 0 1em;
+   @include for-tablet-landscape-up {
+     max-width: 20em;
+   }
+}
+.page-template-page-team .entry-content > .peak-headline:first-child, 
+.page-template-default .entry-content > .peak-page-head:first-child > .wp-block-group__inner-container .peak-headline:first-child {
+  margin-top: 6rem;
+  @include for-tablet-landscape-up {
+    margin-top: 9rem;
+  }
+}

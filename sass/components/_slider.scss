@@ -1,0 +1,55 @@
+.slider {
+  margin: 5rem 0;
+}
+.slider > .wp-block-group__inner-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: calc(100% + 2 * var(--padding-page));
+  margin-left: calc(var(--padding-page) * -1);
+  padding: 0 var(--padding-page);
+  box-sizing: border-box;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.slide {
+  flex-basis: 85vw;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  align-self: stretch;
+  padding: 0 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  @include for-tablet-portrait-up {
+    flex-basis: 41vw;
+  }
+  @include for-tablet-landscape-up {
+    scroll-snap-align: center;
+    flex-basis: 41vw;
+    padding: 0 4.15vw ;
+  }
+}
+.slide:last-child {
+  padding-right: 1rem;
+}
+.testimonial-carousel-quote {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.testimonial-carousel-coin {
+  width: 100px;
+  height: 100px;
+  @include for-tablet-landscape-up {
+    width: 140px;
+    height: 140px;
+  }
+}
+.testimonial-carousel-coin svg {
+  width: 100%;
+  height: 100%;
+}

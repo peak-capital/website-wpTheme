@@ -1,0 +1,310 @@
+.card {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  @include for-tablet-landscape-up {
+    flex-basis: calc(25% - 1rem);
+    margin-left: 0;
+  }
+}
+.card-preview {
+  cursor: pointer;
+}
+.card-preview-image {
+  display: inline-block;
+  width: 100%;
+  @include for-tablet-landscape-up {
+    overflow: hidden;
+    height: 30vw;
+  }
+}
+.card-preview-image img,
+.card-preview-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  // @include for-tablet-landscape-up {
+  // }
+}
+.card-preview-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  margin: 1rem auto .5em auto;
+}
+.card-preview .card-subtitle,
+.card-preview-subtitle p {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 auto .75rem auto;
+  //max-width: calc(100% - 2rem);
+}
+.card-preview-meta {
+  text-align: center;
+  font-size: .75rem;
+}
+.card-preview .ui-plus {
+  display: block;
+  margin: 0 auto;
+}
+.card:nth-child(1n) .card-preview .ui-plus line{
+  stroke: $color-green;
+}
+.card:nth-child(2n) .card-preview .ui-plus line{
+  stroke: $color-pink;
+}
+.card:nth-child(3n) .card-preview .ui-plus line{
+  stroke: $color-blue;
+}
+.card-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: $color-bg;
+  z-index: 6;
+  padding: 1rem;
+  @include for-tablet-landscape-up {
+    padding: 0;
+  }
+}
+.card-full {
+  display: none;
+}
+.card.expanded .card-full {
+  display: block;
+}
+.card-full .entry-header {
+  font-size: 1.5rem;
+}
+.card-full p {
+  font-size: 1rem;
+}
+.card-full blockquote {
+  margin: 0;
+}
+.card-full blockquote p {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.card-full .peak-logo-svg {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  @include for-tablet-landscape-up {
+    display: none;
+  }
+}
+.card-full-image {
+  @include for-tablet-landscape-up {
+    position: fixed;
+    top: 0;
+    width: 41.667%;
+    height: 100%;
+  }
+}
+.card-full-image img,
+.card-full-image picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.card-full-content {
+  @include for-tablet-landscape-up {
+    position: absolute;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: calc(41.667% + 2rem);
+    padding-right: 10%;
+    padding-bottom: calc(1rem + 50px); //accomodate the arrows
+    padding-top: 3.5rem; //accomodate the arrows
+  }
+}
+.card-full-content p {
+  margin: 0 0 1rem 0;
+}
+.card-full-content-title {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  @include for-tablet-landscape-up {
+    font-size: 1.5rem;
+  }
+}
+.card-full-content .card-subtitle {
+  font-size: 1rem;
+  margin: 0 0 2rem 0;
+  max-width: none;
+  @include for-tablet-landscape-up {
+    font-size: .8rem;
+  }
+}
+.card-full-content-coin-title {
+  font-size: .9rem;
+  margin-bottom: .5rem;
+}
+.card-full-content-coins {
+  margin-bottom: 1rem;
+}
+.card-full-content-coin {
+  display: inline-block;
+  margin-right: .25rem;
+  margin-top: 0;
+  width: 2rem;
+  height: 2rem;
+  & img, & svg, & picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.card-full-content-links p {
+  margin-bottom: 0;
+}
+// -------------------------
+// Navigation of Team members
+// -------------------------
+.cards-nav-close,
+.cards-nav-next,
+.cards-nav-prev{
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  @include for-tablet-landscape-up {
+    position: absolute;
+  }
+}
+.cards-nav-close {
+  position: fixed;
+  z-index: 5;
+  top: 1.75rem;
+  right: 1rem;
+  background-image: url('./img/ui-close-x-mobile.svg');
+  @include for-tablet-landscape-up {
+    background-image: url('./img/ui-close-x.svg');
+  }
+}
+.cards-nav-next {
+  float: right;
+  margin: 1rem 0;
+  background-image: url('./img/ui-arrow-right.svg');
+  @include for-tablet-landscape-up {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+.cards-nav-prev {  
+  float: left;
+  margin: 1rem 0;
+  background-image: url('./img/ui-arrow-left.svg');
+  @include for-tablet-landscape-up {
+    bottom: 1rem;
+    left: calc(41.667% + 2rem);
+  }
+}
+// Founder specific cards
+.card-preview .founder-block {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: 100%;
+  position: relative;
+}
+.card-preview .founder-block .founder-coin,
+.card-preview .founder-block .founder-photograph {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  border-radius: 50%;
+  z-index: 1;
+  transform-origin: 50% 50%;
+  & img, & picture, & svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+.card-preview .founder-block .founder-coin {
+  z-index: 2;
+}
+.card-full .founder-coin {
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 20%;
+  height: auto;
+  top: 2rem;
+  right: 4rem;  
+  z-index: 2;
+  @include for-tablet-landscape-up {
+    width: 12.5%;
+    position: fixed;
+    top: calc(42vh - 20vw);
+    right: calc(62%);
+  }
+}
+.card-full .founder-coin svg,
+.card-full .founder-coin img,
+.card-full .founder-coin picture {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card-full .founder-photograph {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 66vw;
+  height: 66vw;
+  margin: 0 auto;
+  @include for-tablet-landscape-up {
+    width: calc(41.667vw - 6rem);
+    height: calc(41.667vw - 6rem);
+    position: fixed;
+    right: calc(58.333% + 3rem);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.card-full .founder-photograph img,
+.card-full .founder-photograph picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-full-meta {
+  position: absolute;
+  top: calc(66vw + 6rem);
+  text-align: center;
+  width: calc(100% - 2rem);
+  @include for-tablet-landscape-up {
+    position: static;
+    text-align: left;
+  }
+}
+
+.founder-block .card-full-content-title {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  @include for-tablet-landscape-up {
+    text-align: left;
+    margin-top: 1rem;
+  }
+}

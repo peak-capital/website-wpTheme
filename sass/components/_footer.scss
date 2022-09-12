@@ -1,0 +1,90 @@
+.site-footer {
+  font-size: 0.75rem;
+  padding: 4rem .5rem 7rem .5rem;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
+  background-image: url('./img/footer-bg-mobile.svg');
+  @include for-tablet-landscape-up {
+    font-size: 1.38vw;
+    padding-bottom: 6rem;
+    background-image: url('./img/footer-bg-desktop-nopeaklogo.svg');
+  }
+}
+.site-footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  background-size: 100% auto;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+.site-footer a {
+  text-decoration: none;
+}
+.site-footer-menu a {
+  text-transform: uppercase;
+}
+.site-footer-column {
+  flex-basis: calc(50% - 1rem);
+  flex-shrink: 0;
+  margin: 0 .5rem;
+  @include for-tablet-landscape-up {
+    margin: 0;
+    padding: 0 .5rem;
+    flex-basis: 16.666%;
+  }
+}
+.site-footer-column:nth-child(1) {
+  @include for-tablet-landscape-up {
+    margin-left: 8.3%;
+    margin-right: 16.66%;
+  }
+}
+.site-footer-column:nth-child(2) {
+  @include for-tablet-landscape-up {
+  }
+}
+.site-footer-menu {
+  display: none;
+  @include for-tablet-landscape-up {
+    display: block;
+  }
+}
+.site-footer-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-footer-social {
+  margin-bottom: 2rem;
+  flex-basis: 100%;
+  @include for-tablet-landscape-up {
+    margin-bottom: 0;
+    flex-basis: 16.666%;
+  }
+
+}
+.blog .site-footer-social,
+.archive .site-footer-social,
+.single-post:not(.darkmode-off) .site-footer-social,
+.page-template-page-events .site-footer-social {
+  a[href^="https://www.youtube"] polygon {
+    fill: $color-font;
+  }
+  & path {
+    fill: $color-bg;
+  }
+  & .icon-crunchbase path[fill="black"]{
+    fill: $color-bg;
+  }
+  & .icon-crunchbase path[fill="white"]{
+    fill: $color-font;
+  }
+}
+.site-footer-social a {
+  padding: .125rem;
+  position: relative;
+  left: -.125rem;
+  display: inline-block;
+  font-size: 1em;
+}

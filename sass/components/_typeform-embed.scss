@@ -1,0 +1,28 @@
+.peak-typeform-container {
+  background-color: $color-font;
+  color: $color-bg;
+}
+.peak-typeform-container .peak-headline {
+  margin: 1rem auto 2rem auto;
+}
+.peak-typeform-container .wp-block-group__inner-container {
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem 1rem;
+  max-width: 1200px;
+}
+.peak-typeform-container .wp-block-typeform-embed-plugin {
+  height: 80vh!important;
+  position: relative;
+  margin-bottom: 4rem;
+}
+.peak-typeform-container .wp-block-typeform-embed-plugin:before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: -2px;
+  right: -4px;
+  top: -2px;
+  bottom: -2px;
+  border: 2px solid #FFF;
+
+}

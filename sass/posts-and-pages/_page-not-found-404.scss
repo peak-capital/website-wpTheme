@@ -1,0 +1,15 @@
+.error-404.not-found {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 5rem 1rem 2rem 1rem;
+  flex-direction: column;
+  justify-content: center;
+  @include for-tablet-landscape-up {
+    padding: 30vh 1rem 10vh 1rem;
+  }
+  & a, & a:visited {
+    color: $color-pink;
+    text-decoration: underline;
+  }
+}

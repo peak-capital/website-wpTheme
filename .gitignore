@@ -1,0 +1,30 @@
+
+# Log files
+*.log
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+# Local History for Visual Studio Code
+.history/
+ 
+# Private Node Modules
+node_modules/
+.eslintrc
+
+ 
+# Private Files
+*.json
+*.csv
+*.csv.gz
+*.tsv
+*.tsv.gz
+*.xlsx
+ 
+# Mac/OSX
+.DS_Store
+ 

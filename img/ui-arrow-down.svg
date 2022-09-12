@@ -1,0 +1,1 @@
+<svg class="ui-arrow-down" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41"><path d="M3.93,22.9,20.5,39.47,37.07,22.9" fill="none" stroke="#000" stroke-width="2"/><path d="M20.5,37.93V1.15" fill="none" stroke="#000" stroke-linecap="square" stroke-width="2"/></svg>
