@@ -15,7 +15,8 @@
 # Private Node Modules
 node_modules/
 .eslintrc
-
+.sass-cache
+.stylelintrc.json
  
 # Private Files
 *.json
