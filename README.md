@@ -27,45 +27,45 @@ Our website is https://peak.capital, generated using WordPress with a 100% custo
 
 Peak2021 is using PHP templates to create the markup of the pages.
 
-The CSS and Javascript are build using [Sass](https://sass-lang.com/) and [Webpack](https://webpack.js.org/). To get started developing the CSS or JS of the theme, you need to have [Node.js](https://nodejs.org/en/) and npm installed. After cloning the theme, run `'npm install'` to install all dependencies. To watch for changes and rebuild the theme automatically, run `'npm start'`. To build the theme for production, run `'npm run prod'`.
+The CSS and Javascript are build using [Sass](https://sass-lang.com/) and [Webpack](https://webpack.js.org/). To get started developing the CSS or JS of the theme, you need to have [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed. After cloning the theme, run `'npm install'` to install all dependencies. To watch for changes and rebuild the theme automatically, run `'npm start'`. To build the theme for production, run `'npm run prod'`.
 
-*Do Not* edit the `style.css` file directly. It is generated from the `style.scss` file. If you need to add CSS, do it in the `style.scss` file or in one of the partials located in the folder /sass.
+***Do Not*** edit the `style.css` file directly. It is generated from the `style.scss` file. If you need to add CSS, do it in the `style.scss` file or in one of the partials located in the folder /sass.
 
-*Do also not* edit the Javascript file /js/main.js directly. It is generated from the files located in the folder /js/src. Edit those instead and run `npm start` or `npm run prod` to rebuild the main.js file.
+***Do also not*** edit the Javascript file `/js/main.js` directly. It is generated from the files located in the folder `/js/src`. Edit those instead and run `npm start` or `npm run prod` to rebuild the main.js file.
 
 ## Deployment
 
 The theme is deployed to the WordPress instance using WP Pusher. 
 
-After the theme has been updated and the changes have been pushed to the main branch of this repository, the theme can be deployed by logging in to the WordPress admin interface and navigation to the WP Pusher plugin in the sidebar. 
+After changes to the theme's code have been pushed to the main branch of this repository, the theme can be deployed by logging in to the WordPress admin interface and navigation to the WP Pusher plugin in the sidebar. 
 
-In the submenu underneath the WP Pusher menu item, click on "Themes".
+In the submenu underneath the WP Pusher menu item, click on *"Themes"*.
 
-In the list of themes, click on the "Update theme" button next to the theme "Peak 2021". 
+In the list of themes, click on the *"Update theme"* button next to the theme *"Peak 2021"*. 
 
-This will update the theme on the WordPress instance. Here you can also enable automatic Push-to-Deploy, which will automatically update the theme when changes are pushed to the main branch of this repository. This requires that all people working on the theme know that any push will affect the website immediately.
+This will update the theme on the WordPress instance. Here you can also enable automatic Push-to-Deploy, which will automatically update the theme when changes are pushed to the main branch of this repository. *If you enable Push-to-deploy all people working on the theme need to be aware that any push will affect the website **immediately**.*
 
 ## Making changes
 
 ### Tools
+
 Most of the content of the website is managed in the WordPress admin interface. To make changes, log in to the WordPress admin interface and navigate to the page you want to change.
 
 To edit the code of the theme you can use any text editor. 
 
-Github has a built in text editor, just click on the file you want to edit and click on the pencil icon in the top right corner. When you are done with the changes you can commit them by clicking on the "Commit changes" button at the bottom of the page. As mentioned [above in the deployment](#deployment) section, any changes pushed to the main branch will only go live on the website once the code is pulled with WP Pusher. *_You need to be a team member of the [peak-capital github organization](https://github.com/peak-capital) to do this_*
+Github has a built in text editor, just click on the file you want to edit and click on the pencil icon in the top right corner. When you are done with the changes you can commit them by clicking on the "Commit changes" button at the bottom of the page. As mentioned [above in the deployment](#deployment) section, any changes pushed to the main branch will only go live on the website once the code is pulled with WP Pusher. *_You need to be a team member of the peak-capital github organization to do this_*
 
 *_Note that to edit the CSS and Javascript code, you'll also need to run the build process with npm. For that you will have to have a clone of the repo running on your local dev environment_*
 
 ### Pages, Founders, Team Members
- The pages that are referenced in the top navigation can be found under "Pages", the individual Founders can be edited under "Founders" and the individual Team members can be edited under "Team members". You will find these content collections in the sidebar of the WordPress admin interface.
-
+ The pages that are referenced in the top navigation can be found under *"Pages"*, the individual Founders can be edited under *"Founders"* and the individual Team members can be edited under *"Team members"*. You will find these content collections in the sidebar of the WordPress admin interface.
 
 ### Blog posts
 At the time of writing (September 2022), the blog posts are being written in a third-party tool called [StoryChief](https://storychief.io/). The blog posts are then imported into WordPress using the StoryChief plugin.
-You _can_ edit blog posts after they have been imported, just navigate to "Posts" and click on the post you want to edit. 
+You *can* edit blog posts after they have been imported, just navigate to "Posts" and click on the post you want to edit. 
 
 ### Homepage
-At the time of writing (September 2022) the homepage is a static page. To edit the content of the homepage, you will need to change the source code of the theme template file `front-page.php`. _You will need to have basic knowledge of HTML and PHP to make changes to this file._
+At the time of writing (September 2022) the homepage is a static page. This means the content can't be accessed from within the WordPress editor. To edit the content of the homepage, you will need to change the source code of the theme template file `front-page.php`. _You will need to have basic knowledge of HTML and PHP to make changes to this file. Make sure you make the changes and commit them to this repository, then use WP Pusher to pull the changes as [described above](#deployment)_
 
 ### Design (CSS)
 To make changes to the design of the website, knowledge of PHP, HTML, CSS and build processes is required. 
