@@ -68,21 +68,9 @@
     z-index: 2;
     position: static;
   }
-  // .backtoteam {
-  //   z-index: 1;
-  //   text-decoration: none;
-  //   position: absolute;
-  //   margin: 1rem auto;
-  //   left: 0;
-  //   display: block;
-  //   text-align: center;
-  //   width: 100%;
-  //   @include for-tablet-landscape-up {
-  //     bottom: 1.5rem;
-  //     left: calc(41.667% + 2rem);
-  //     width: calc(58.333% - 2rem);
-  //   }
-  // }
+  .teammember-full-content-coins {
+    margin-bottom: 0;
+  }
 
   
 }
