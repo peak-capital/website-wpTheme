@@ -29,15 +29,15 @@
 
   .teammember {
     @include for-tablet-landscape-up {
-      position: absolute;
+      position: relative;
       min-height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding-left: calc(41.667% + 2rem);
       padding-right: 10%;
-      padding-bottom: calc(1rem + 50px); //accomodate the arrows
-      padding-top: 3.5rem; //accomodate the arrows
+      padding-bottom: 0; //accomodate the arrows
+      padding-top: 110px; //accomodate the arrows
     }
   }
 
@@ -53,24 +53,36 @@
   .teammember p {
     margin: 0 0 1rem 0;
   }
-  .cards-nav-prev, .cards-nav-next {
-    z-index: 2;
-  }
-  .backtoteam {
-    z-index: 1;
-    text-decoration: none;
-    position: absolute;
-    margin: 1rem auto;
-    left: 0;
-    display: block;
-    text-align: center;
-    width: 100%;
+
+  .teammember-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     @include for-tablet-landscape-up {
-      bottom: 1.5rem;
-      left: calc(41.667% + 2rem);
-      width: calc(58.333% - 2rem);
+      margin-left: calc(41.667% + 2rem);
+      margin-right: 2rem;
     }
   }
+  .cards-nav-prev, .backtoteam, .cards-nav-next {
+    z-index: 2;
+    position: static;
+  }
+  // .backtoteam {
+  //   z-index: 1;
+  //   text-decoration: none;
+  //   position: absolute;
+  //   margin: 1rem auto;
+  //   left: 0;
+  //   display: block;
+  //   text-align: center;
+  //   width: 100%;
+  //   @include for-tablet-landscape-up {
+  //     bottom: 1.5rem;
+  //     left: calc(41.667% + 2rem);
+  //     width: calc(58.333% - 2rem);
+  //   }
+  // }
 
   
 }

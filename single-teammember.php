@@ -19,14 +19,15 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-  <?php 
-
-    $next_post_url = get_permalink( get_adjacent_post(false,'',true)->ID );
-    $prev_post_url = get_permalink( get_adjacent_post(false,'',false)->ID );
-    echo '<a href="'.$next_post_url.'" class="cards-nav-next"></a>';
-    echo '<a href="/team" class="backtoteam">Back to team</a>';
-    echo '<a href="'.$prev_post_url.'" class="cards-nav-prev"></a>';
-  ?>
+    <div class="teammember-nav">
+      <?php 
+        $next_post_url = get_permalink( get_adjacent_post(false,'',true)->ID );
+        $prev_post_url = get_permalink( get_adjacent_post(false,'',false)->ID );
+        echo '<a href="'.$prev_post_url.'" class="cards-nav-prev"></a>';
+        echo '<a href="/team" class="backtoteam">Back to team</a>';
+        echo '<a href="'.$next_post_url.'" class="cards-nav-next"></a>';
+      ?>
+    </div>
 	</main><!-- #main -->
 
 <?php
