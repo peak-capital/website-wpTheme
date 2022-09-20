@@ -19,7 +19,8 @@ node_modules/
 .stylelintrc.json
  
 # Private Files
-*.json
+# *.json
+package-lock.json
 *.csv
 *.csv.gz
 *.tsv

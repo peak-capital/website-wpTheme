@@ -1,0 +1,23 @@
+{
+  "name": "peak2021",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode=development --watch & sass ./sass/style.scss:style.min.css --watch --style compressed & sass ./sass/style-editor.scss:style-editor.min.css --watch --style compressed",
+    "prod": "webpack --mode=production && sass ./sass/style.scss:style.min.css --style compressed && sass ./sass/style-editor.scss:style-editor.min.css --style compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "gsap": "^3.6.1",
+    "matter-js": "^0.17.1",
+    "sass": "^1.54.9" 
+  }
+}
