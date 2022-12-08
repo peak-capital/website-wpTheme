@@ -28,7 +28,7 @@ get_header();
       </div>
       <div class="home-image-contact-details">
         €66M by entrepreneurs for entrepreneurs<br>
-  50+ Investments — Europe <br>
+  37+ Investments — Europe <br>
         SaaS — Marketplaces — Platforms 
       </div>
       <div class="home-copy-segment-next">
