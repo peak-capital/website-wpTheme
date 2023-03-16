@@ -118,7 +118,7 @@ get_header();
     <div class="home-copy-segment" id="home-copy-segment-staytuned">
       <p>Peak</p>
       <p>Amsterdam <br> 
-        <a href="https://www.google.com/maps?q=https://goo.gl/maps/1gtbUb87SuwW2K696" target="_blank" rel="noopener">Berlin</a> <br> 
+        <a href="https://www.google.com/maps/place/Peak/@52.5300528,13.3833705,15z/data=!4m6!3m5!1s0x47a8519cda6a93fd:0xfe52622063ac3511!8m2!3d52.5308535!4d13.4109184!16s%2Fg%2F11tww32j_1" target="_blank" rel="noopener">Berlin</a> <br> 
         Stockholm </p>
       <p>
         <a class="textlink-red" href="tel:+31850014343">+31 85 001 4343</a><br>
