@@ -117,9 +117,9 @@ get_header();
 
     <div class="home-copy-segment" id="home-copy-segment-staytuned">
       <p>Peak</p>
-      <p>Amsterdam <br> 
-        <a href="https://www.google.com/maps/place/Peak/@52.5300528,13.3833705,15z/data=!4m6!3m5!1s0x47a8519cda6a93fd:0xfe52622063ac3511!8m2!3d52.5308535!4d13.4109184!16s%2Fg%2F11tww32j_1" target="_blank" rel="noopener">Berlin</a> <br> 
-        Stockholm </p>
+      <p>a href="https://www.google.com/maps/place/Peak/@52.3619237,4.9069833,15z/data=!4m2!3m1!1s0x0:0x766f9e57a4ca8e09?sa=X&ved=2ahUKEwig9faHgOH9AhUHzKQKHV5XCmgQ_BJ6BAh7EAk" target="_blank" rel="noopener">Amsterdam</a> <br> 
+        <a class="textlink-red" href="https://www.google.com/maps/place/Peak/@52.5300528,13.3833705,15z/data=!4m6!3m5!1s0x47a8519cda6a93fd:0xfe52622063ac3511!8m2!3d52.5308535!4d13.4109184!16s%2Fg%2F11tww32j_1" target="_blank" rel="noopener">Berlin</a> <br> 
+        <a class="textlink-pink" href="https://www.google.com/maps/place/Peak/@59.3343203,18.0613443,16z/data=!4m7!3m6!1s0x465f9d5eefb50861:0x68fc425d43274f18!8m2!3d59.3340577!4d18.0662635!15sCgRQZWFrkgEXdmVudHVyZV9jYXBpdGFsX2NvbXBhbnngAQA!16s%2Fg%2F11tsdg4_z_?coh=164777&entry=tt&shorturl=1" target="_blank" rel="noopener">Stockholm</a> </p>
       <p>
         <a class="textlink-red" href="tel:+31850014343">+31 85 001 4343</a><br>
         <a class="textlink-pink" href="mailto:<?php the_global_var('email'); ?>"><?php the_global_var('email'); ?></a>
