@@ -135,7 +135,7 @@ get_header();
         </p>
       </div>
       <div class="home-staytuned-copyright">
-        <small>© Peak 2022</small>
+        <small>© Peak 2023</small>
       </div>
     </div>
   </div>
